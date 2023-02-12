@@ -583,6 +583,14 @@ def nm_suppression(boxes, scores, overlap=0.45, top_k=200):
         # 現在のconf最大のindexをkeepに格納したので、idxをひとつ減らす
         idx = idx[:-1]
 
+        # idxに合わせてサイズを変更
+        tmp_x1 = tmp_x1.resize_(idx.size(0))
+        tmp_y1 = tmp_x1.resize_(idx.size(0))
+        tmp_x2 = tmp_x1.resize_(idx.size(0))
+        tmp_y2 = tmp_x1.resize_(idx.size(0))
+        tmp_w = tmp_x1.resize_(idx.size(0))
+        tmp_h = tmp_x1.resize_(idx.size(0))
+
         # -------------------
         # これからkeepに格納したBBoxと被りの大きいBBoxを抽出して除去する
         # -------------------
