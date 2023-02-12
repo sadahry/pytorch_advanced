@@ -585,11 +585,11 @@ def nm_suppression(boxes, scores, overlap=0.45, top_k=200):
 
         # idxに合わせてサイズを変更
         tmp_x1 = tmp_x1.resize_(idx.size(0))
-        tmp_y1 = tmp_x1.resize_(idx.size(0))
-        tmp_x2 = tmp_x1.resize_(idx.size(0))
-        tmp_y2 = tmp_x1.resize_(idx.size(0))
-        tmp_w = tmp_x1.resize_(idx.size(0))
-        tmp_h = tmp_x1.resize_(idx.size(0))
+        tmp_y1 = tmp_y1.resize_(idx.size(0))
+        tmp_x2 = tmp_x2.resize_(idx.size(0))
+        tmp_y2 = tmp_y2.resize_(idx.size(0))
+        tmp_w = tmp_w.resize_(idx.size(0))
+        tmp_h = tmp_h.resize_(idx.size(0))
 
         # -------------------
         # これからkeepに格納したBBoxと被りの大きいBBoxを抽出して除去する
